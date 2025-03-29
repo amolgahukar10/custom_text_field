@@ -1,47 +1,116 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/*
-  Created By Amol Gahukar 29-03-2025
-*/
+/// A customizable text field widget that supports various input types, validation,
+/// and picker functionalities like date, time, and year selection.
+///
+/// This widget extends [StatelessWidget] and provides a rich set of features including:
+/// * Custom border and styling options
+/// * Date, time, and year picker integration
+/// * Form validation support
+/// * Prefix and suffix icons
+/// * Error message display
+/// * Copy and paste control
+/// * Input formatting
 // ignore: must_be_immutable
 class BorderTextField extends StatelessWidget {
+  /// The text to display as the field's label
   String labelText;
 
+  /// The placeholder text shown when the field is empty
   String hintText;
+
+  /// Callback function triggered when the field's value changes
   Function(dynamic value) onChanged;
+
+  /// Controller for managing the text field's content
   TextEditingController controller;
+
+  /// Whether to obscure the text (useful for password fields)
   bool obscureText;
+
+  /// Optional widget to display before the text input
   Widget? prefixIcon;
+
+  /// Optional widget to display after the text input
   Widget? sufixIcon;
+
+  /// Color for the prefix and suffix icons
   Color? iconColor;
+
+  /// The type of keyboard to display for editing the text
   TextInputType inputType;
+
+  /// Optional list of input formatters to control text input
   List<TextInputFormatter>? inputFormatters;
+
+  /// Whether the text field should be filled with a background color
   bool filled;
+
+  /// The background color when [filled] is true
   Color? fillColor;
+
+  /// Error message to display when validation fails
   String? errorMessage;
 
+  /// Maximum number of lines for the text field
   int? maxLine;
+
+  /// Maximum length of text allowed in the field
   int? maxLength;
+
+  /// Whether the text field is enabled for user interaction
   bool enable;
+
+  /// Whether the field is mandatory (displays a red asterisk if true)
   bool isMandatory;
+
+  /// Whether to show the label text
   bool isLabelRequired;
+
+  /// Whether to show a date picker when the field is tapped
   bool isDatePicker;
+
+  /// Whether to show a year picker when the field is tapped
   bool isYearPicker;
+
+  /// Whether to show a time picker when the field is tapped
   bool isTimePicker;
+
+  /// Whether the field should be visible
   bool isVisible;
+
+  /// Selected time when using time picker
   TimeOfDay? timeOfDay;
+
+  /// Whether to use 24-hour format for time picker
   bool is24Hour;
+
+  /// Top margin for the text field container
   int marginTop;
+
+  /// Validation function that returns an error message string if validation fails
   final String? Function(String?)? validator;
+
+  /// First selectable date for date picker
   DateTime? firstDate;
+
+  /// Last selectable date for date picker
   DateTime? lastDate;
+
+  /// Text alignment within the field
   TextAlign? textAlign;
-  final bool enableCopy; // New property to control text copying
+
+  /// Whether to allow text copying
+  final bool enableCopy;
+
+  /// Whether to enable text selection
   final bool enableInteractiveSelection;
 
-  // New visibility property
-
+  /// Creates a [BorderTextField] widget.
+  ///
+  /// The [labelText], [hintText], [onChanged], and [controller] parameters are required.
+  /// Other parameters are optional and provide additional customization options.
   BorderTextField({
     super.key,
     required this.labelText,
@@ -78,6 +147,9 @@ class BorderTextField extends StatelessWidget {
         false, // Default to true to show by default
   });
 
+  /// Builds the widget tree for the text field.
+  ///
+  /// If [isVisible] is false, an empty [SizedBox] is returned to hide the widget.
   @override
   Widget build(BuildContext context) {
     // If the field is not visible, return an empty container (hide the widget)
@@ -166,6 +238,9 @@ class BorderTextField extends StatelessWidget {
     );
   }
 
+  /// Returns an error message string if [errorMessage] is not null.
+  ///
+  /// The error message is prefixed with the [labelText] to provide context.
   String? getErrorMessage(String? errorMessage, String label) {
     if (errorMessage == null) {
       return null;
@@ -174,6 +249,9 @@ class BorderTextField extends StatelessWidget {
     }
   }
 
+  /// Displays a date picker dialog and updates the text field with the selected date.
+  ///
+  /// The [context], [firstDate], and [lastDate] parameters are used to configure the date picker.
   Future<void> _selectDate(
     BuildContext context,
     DateTime firstDate,
@@ -191,6 +269,9 @@ class BorderTextField extends StatelessWidget {
     }
   }
 
+  /// Displays a time picker dialog and updates the text field with the selected time.
+  ///
+  /// The [context] parameter is used to configure the time picker.
   Future<void> _selectTime(BuildContext context) async {
     TimeOfDay? selectedTime = await showTimePicker(
       context: context,

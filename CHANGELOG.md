@@ -1,4 +1,9 @@
-## 1.0.0 - 2025-03-29
+## 1.0.1 - 2025-03-29
+
+* Added comprehensive dartdoc comments to all public API elements
+* Improved library-level documentation
+* Added detailed property and method documentation
+* Enhanced code readability with better documentation structure
 
 Initial release of the custome_border_text_field package with the following features:
 
