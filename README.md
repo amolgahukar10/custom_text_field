@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-# Custom Text Field
+# Custom Border Text Field
 
 A feature-rich Flutter text field widget that offers date/time pickers, form validation, custom borders, icons, and error handling. Perfect for creating professional and user-friendly input forms.
 
@@ -41,13 +41,13 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  custom_text_field: ^1.0.0
+  custome_border_text_field: ^1.0.0
 ```
 
 ## Usage
 
 ```dart
-import 'package:custom_text_field/custom_text_field.dart';
+import 'package:custome_border_text_field/custome_border_text_field.dart';
 
 BorderTextField(
   labelText: 'Username',
@@ -104,7 +104,7 @@ BorderTextField(
 
 ## Additional information
 
-Created by Amol Gahukar. For issues and feature requests, please visit the [GitHub repository](https://github.com/amolgahukar10/custom_text_field).
+Created by Amol Gahukar. For issues and feature requests, please visit the [GitHub repository](https://github.com/amolgahukar10/border_text_field).
 
 ## License
 

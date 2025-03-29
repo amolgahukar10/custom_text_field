@@ -1,6 +1,6 @@
 ## 1.0.0 - 2025-03-29
 
-Initial release of the custom_text_field package with the following features:
+Initial release of the custome_border_text_field package with the following features:
 
 * Implemented BorderTextField widget with extensive customization options
 * Added support for text input with customizable borders and styling
