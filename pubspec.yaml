@@ -1,6 +1,6 @@
 name: custome_border_text_field
 description: A customizable Flutter text field widget with date/time pickers, form validation, custom borders, and error handling for professional input forms.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/amolgahukar10/custome_border_text_field
 
 environment:

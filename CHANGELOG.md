@@ -5,6 +5,7 @@
 * Added detailed property and method documentation
 * Enhanced code readability with better documentation structure
 
+## 1.0.0 - 2025-03-29
 Initial release of the custome_border_text_field package with the following features:
 
 * Implemented BorderTextField widget with extensive customization options
